@@ -8,6 +8,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float speed;
     private Vector3 velocity;
     private CharacterController characterController;
+
+    public Transform groundCheck;
+    public LayerMask groundMask;
     
     // Start is called before the first frame update
     void Start()
@@ -17,6 +20,26 @@ public class PlayerController : MonoBehaviour
 
     private void PlayerMove ()
     {
+        RaycastHit hit;
+
+        if (Physics.Raycast(groundCheck.position, transform.TransformDirection(Vector3.down), out hit, 0.4f, groundMask))
+        {
+            string terrainType = hit.collider.gameObject.tag;
+
+            switch (terrainType)
+            {
+                default:
+                    speed = 12;
+                    break;
+                case "Low":
+                    speed = 3;
+                    break;
+                case "High":
+                    speed = 20;
+                    break;
+            }
+        }
+        
         float x = Input.GetAxis("Horizontal");
         float z = Input.GetAxis("Vertical");
 
