@@ -4,15 +4,25 @@ using UnityEngine;
 
 public class PortalTeleport : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public Transform player;
+    public Transform receiver;
+    private bool playerIsOverLapping = false;
+
+    private void OnTriggerEnter(Collider other)
     {
-        
+        if (other.tag == "Player") playerIsOverLapping = true;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnTriggerExit(Collider other)
     {
-        
+        if (other.tag == "Player") playerIsOverLapping = false;
+    }
+
+    private void Teleportation()
+    {
+        if (playerIsOverLapping)
+        {
+
+        }
     }
 }
