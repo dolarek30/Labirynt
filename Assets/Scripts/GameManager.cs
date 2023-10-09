@@ -29,7 +29,7 @@ public class GameManager : MonoBehaviour
     void Stopper()
     {
         timeToEnd--;
-        Debug.Log("Time: " + timeToEnd + "s");
+        /*Debug.Log("Time: " + timeToEnd + "s");*/
         
         if (timeToEnd <= 0) //stop gra gdy czas minie
         {
@@ -94,4 +94,20 @@ public class GameManager : MonoBehaviour
     private int redKey = 0;
     private int greenKey = 0;
     private int goldKey = 0;
+
+    public void AddKey (KeyColor c)
+    {
+        if (c == KeyColor.Red) redKey++;
+        else if (c == KeyColor.Green) greenKey++;
+        else if (c == KeyColor.Gold) goldKey++;
+    }
+
+    public void CheckPickUps()
+    {
+        Debug.Log("Time left: " + timeToEnd);
+        Debug.Log("Red keys: " + redKey);
+        Debug.Log("Green keys: " + greenKey);
+        Debug.Log("Gold keys: " + goldKey);
+        Debug.Log("Points: " + points);
+    }
 }

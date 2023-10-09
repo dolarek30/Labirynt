@@ -7,6 +7,7 @@ public class PickUp : MonoBehaviour
     public virtual void PickedUp()
     {
         Debug.Log("PickedUp");
+        GameManager.gameManager.CheckPickUps();
         Destroy(this.gameObject);
     }
 
