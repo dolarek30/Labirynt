@@ -33,6 +33,13 @@ public class PortalTeleport : MonoBehaviour
 
                 Vector3 positionOffset = Quaternion.Euler(0f, rotationDiff, 0f) * portalToPlayer;
 
+                positionOffset *= 2;
+
+                float player_y = player.position.y;
+
+                Vector3 final_vector = receiver.position + positionOffset;
+                Vector3 final_vector = receiver.position + positionOffset;
+
                 player.position = receiver.position + positionOffset;
 
                 playerIsOverLapping = false;
