@@ -38,7 +38,6 @@ public class PortalTeleport : MonoBehaviour
                 float player_y = player.position.y;
 
                 Vector3 final_vector = receiver.position + positionOffset;
-                Vector3 final_vector = receiver.position + positionOffset;
 
                 player.position = receiver.position + positionOffset;
 

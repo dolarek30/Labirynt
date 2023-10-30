@@ -133,6 +133,7 @@ GameObject:
   m_Component:
   - component: {fileID: 64382306}
   - component: {fileID: 64382307}
+  - component: {fileID: 64382308}
   m_Layer: 0
   m_Name: Camera
   m_TagString: Untagged
@@ -189,7 +190,7 @@ Camera:
     m_Bits: 4294967295
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 8400000, guid: 463397ecebcf9a2468728b42df4da234, type: 2}
-  m_TargetDisplay: 0
+  m_TargetDisplay: 2
   m_TargetEye: 3
   m_HDR: 1
   m_AllowMSAA: 1
@@ -198,6 +199,21 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
+--- !u!114 &64382308
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 64382305}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e2aae7d35f318c41a580f96a42308cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerCamera: {fileID: 320820811}
+  portal: {fileID: 1759169822}
+  otherPortal: {fileID: 154404264}
 --- !u!1 &154404263
 GameObject:
   m_ObjectHideFlags: 0
@@ -207,6 +223,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 154404264}
+  - component: {fileID: 154404265}
   m_Layer: 0
   m_Name: Portal
   m_TagString: Untagged
@@ -235,6 +252,23 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &154404265
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 154404263}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3367610514a0e1e4d93b0c3419be1380, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  otherPortal: {fileID: 1759169823}
+  material: {fileID: 2100000, guid: 6dccb3357fe641d4585f1405e1525785, type: 2}
+  myCamera: {fileID: 777359963}
+  renderSurface: {fileID: 1598682193}
+  portalCollider: {fileID: 946496946}
 --- !u!1 &262063970
 GameObject:
   m_ObjectHideFlags: 0
@@ -895,13 +929,14 @@ GameObject:
   m_Component:
   - component: {fileID: 777359962}
   - component: {fileID: 777359963}
+  - component: {fileID: 777359964}
   m_Layer: 0
   m_Name: Camera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &777359962
 Transform:
   m_ObjectHideFlags: 0
@@ -951,7 +986,7 @@ Camera:
     m_Bits: 4294967295
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
-  m_TargetDisplay: 0
+  m_TargetDisplay: 1
   m_TargetEye: 3
   m_HDR: 1
   m_AllowMSAA: 1
@@ -960,6 +995,21 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
+--- !u!114 &777359964
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 777359961}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e2aae7d35f318c41a580f96a42308cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerCamera: {fileID: 320820811}
+  portal: {fileID: 154404264}
+  otherPortal: {fileID: 1759169822}
 --- !u!1 &938672879
 GameObject:
   m_ObjectHideFlags: 0
@@ -1576,6 +1626,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1759169822}
+  - component: {fileID: 1759169823}
   m_Layer: 0
   m_Name: Portal (1)
   m_TagString: Untagged
@@ -1604,6 +1655,23 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!114 &1759169823
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1759169821}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3367610514a0e1e4d93b0c3419be1380, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  otherPortal: {fileID: 154404265}
+  material: {fileID: 2100000, guid: 6dccb3357fe641d4585f1405e1525785, type: 2}
+  myCamera: {fileID: 64382307}
+  renderSurface: {fileID: 726584134}
+  portalCollider: {fileID: 1376957363}
 --- !u!1 &1950107887
 GameObject:
   m_ObjectHideFlags: 0
