@@ -17,7 +17,7 @@ public class GameManager : MonoBehaviour
     {
         if (gameManager == null) gameManager = this;
         if (timeToEnd <= 0) timeToEnd = 100;
-        InvokeRepeating("Stopper", 2, 1);
+        InvokeRepeating(nameof(Stopper), 2, 1);
     }
 
     // Update is called once per frame
@@ -65,7 +65,7 @@ public class GameManager : MonoBehaviour
 
     public void EndGame()
     {
-        CancelInvoke("Stopper");
+        CancelInvoke(nameof(Stopper));
         if (win)
         {
             Debug.Log("You won!");
@@ -83,7 +83,7 @@ public class GameManager : MonoBehaviour
     public void FreezeTime(int f)
     {
         CancelInvoke();
-        InvokeRepeating("Stopper", f, 1);
+        InvokeRepeating(nameof(Stopper), f, 1);
     }
 
     public void AddTime (int t)
@@ -91,9 +91,9 @@ public class GameManager : MonoBehaviour
         timeToEnd += t;
     }
 
-    private int redKey = 0;
-    private int greenKey = 0;
-    private int goldKey = 0;
+    public int redKey = 0;
+    public int greenKey = 0;
+    public int goldKey = 0;
 
     public void AddKey (KeyColor c)
     {
